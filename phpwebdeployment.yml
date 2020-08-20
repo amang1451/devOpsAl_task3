@@ -6,8 +6,8 @@ metadata:
     app: webserver
 spec:
   ports:
-    - port: 4949
-      nodePort: 31000
+    - port: 4950
+      nodePort: 30000
       targetPort: 80
   selector:
     app: webserver
@@ -34,15 +34,15 @@ spec:
         tier: frontend
     spec:
       containers:
-      - image: httpd
-        name: myhtmlweb
+      - image: vimal13/apache-webserver-php
+        name: myphpweb
         ports:
         - containerPort: 80
           name: webserver
         volumeMounts:
         - name: webstorage
-          mountPath: /usr/local/apache2/htdocs/
+          mountPath: /var/www/html
       volumes:
       - name: webstorage
         persistentVolumeClaim:
-          claimName: htmlwebpvc
+          claimName: phpwebpvc
