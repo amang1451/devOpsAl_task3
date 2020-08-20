@@ -45,4 +45,4 @@ spec:
       volumes:
       - name: webstorage
         persistentVolumeClaim:
-          claimName: webpvc
+          claimName: htmlwebpvc
