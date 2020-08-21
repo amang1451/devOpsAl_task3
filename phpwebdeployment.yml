@@ -6,8 +6,8 @@ metadata:
     app: webserver
 spec:
   ports:
-    - port: 4950
-      nodePort: 30000
+    - port: 4949
+      nodePort: 31000
       targetPort: 80
   selector:
     app: webserver
